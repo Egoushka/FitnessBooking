@@ -1,0 +1,69 @@
+<div class="m-a-1">
+  <div *ngIf="authService.hasRestrictions(['coach'])">
+    <button class="btn btn-lg btn-dark" (click)="showCoachPage()">
+      Coach page
+    </button>
+  </div>
+  <div *ngIf="authService.hasRestrictions(['administrator'])">
+    <button class="btn btn-lg btn-dark" (click)="showAdministratorPage()">
+      Edit Coaches
+    </button>
+  </div>
+  <div *ngIf="authService.hasRestrictions(['visitor'])">
+    <button class="btn btn-lg btn-dark" (click)="showVisitorPage()">
+      Visitor`s subscribtions
+    </button>
+  </div>
+  <h2 class="text-xs-center">Gyms</h2>
+  <table class="table table-bordered table-striped p-a-1">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of gyms$">
+        <td class="text-xs-right">
+          {{ item.id }}
+        </td>
+        <td class="text-xs-right">
+          {{ item.name }}
+        </td>
+        <td class="text-xs-right">
+          {{ item.location }}
+        </td>
+        <td class="text-xs-right">
+          {{ item.description }}
+        </td>
+        <div *ngIf="authService.hasRestrictions(['administrator'])">
+          <td class="text-xs-right">
+            <button class="btn btn-lg btn-dark" (click)="deleteGym(item.id)">
+              Delete
+            </button>
+          </td>
+          <td class="text-xs-right">
+            <button class="btn btn-lg btn-dark" (click)="editGym(item.id, item.name, item.location, item.description)">
+              Edit
+            </button>
+          </td>
+        </div>
+        <td class="text-xs-right">
+          <a  class="btn btn-lg btn-dark" (click) ="showGym(item.id)">
+            View
+          </a>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <td *ngIf="authService.hasRestrictions(['administrator'])" class="text-xs-right">
+        <button class="btn btn-lg btn-dark" (click)="newGym()">New Gym</button>
+      </td>
+      <td class="text-xs-right">
+        <button class="btn btn-lg btn-dark" (click)="logOut()">LogOut</button>
+      </td>
+    </tfoot>
+  </table>
+</div>

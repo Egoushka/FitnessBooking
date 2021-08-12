@@ -1,0 +1,29 @@
+<div class="m-a-1">
+  <h2 class="text-xs-center">Sections</h2>
+  <table class="table table-bordered table-striped p-a-1">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>VisitType</th>
+        <th>Day</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of visitorSchedules$">
+        <td class="text-xs-right">
+          {{ item.id }}
+        </td>
+        <td class="text-xs-right">
+          {{ VisitType[item.visitTypeId] }}
+        </td>
+        <td class="text-xs-right">
+          {{ item.day|date }}
+        </td>
+        <td class="text-xs-right">
+          {{ ScheduleStatus[item.statusId] }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

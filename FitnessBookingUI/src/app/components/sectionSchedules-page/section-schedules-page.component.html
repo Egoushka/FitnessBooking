@@ -1,0 +1,48 @@
+<div class="m-a-1">
+  <h2 class="text-xs-center">Section Schedule</h2>
+  <table class="table table-bordered table-striped p-a-1">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Start</th>
+        <th>End</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of sectionSchedules$">
+        <td class="text-xs-right">
+          {{ item.id }}
+        </td>
+        <td class="text-xs-right">
+          {{ timeSpan.toStringValue(item.startHour) }}
+        </td>
+        <td class="text-xs-right">
+          {{ timeSpan.toStringValue(item.endHour) }}
+        </td>
+        <td class="text-xs-right">
+          <button class="btn btn-lg btn-dark" (click) = "subscribe(item.id)">
+            Subscribe
+          </button>
+        </td>
+        <div *ngIf="authService.hasRestrictions(['administrator'])">
+          <td class="text-xs-right">
+            <button class="btn btn-lg btn-dark" (click)="editSectionSchedule(item.id, item.startHour, item.endHour)">
+              Edit
+            </button>
+          </td>
+        </div>
+      </tr>
+    </tbody>
+    <tfoot>
+
+      <div *ngIf="authService.hasRestrictions(['administrator'])">
+        <td class="text-xs-right">
+          <button class="btn btn-lg btn-dark" (click) = "addSectionSchedule()">
+            New section schedule
+          </button>
+        </td>
+      </div>
+
+    </tfoot>
+  </table>
+</div>

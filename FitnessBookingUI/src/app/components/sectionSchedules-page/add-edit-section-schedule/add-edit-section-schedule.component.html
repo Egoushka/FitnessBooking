@@ -1,0 +1,40 @@
+<h1 *ngIf="isAddMode">Add section schedule</h1>
+<h1 *ngIf="!isAddMode">Edit section schedule</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-row">
+    <div class="form-group">
+      <input
+        type="time"
+        formControlName="startHour"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f.startHour.errors }"
+      />
+      <div *ngIf="submitted && f.startHour.errors" class="invalid-feedback">
+        <div *ngIf="f.startHour.errors.reqiired">Start hour is required</div>
+        <div *ngIf="f.startHour.hasError('notCorrect')">Value is not correct</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <input
+        type="time"
+        formControlName="endHour"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f.endHour.errors }"
+      />
+      <div *ngIf="submitted && f.endHour.errors" class="invalid-feedback">
+        <div *ngIf="f.endHour.errors.reqiired">End hour is required</div>
+        <div *ngIf="f.endHour.hasError('notCorrect')">Value is not correct</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <button [disabled]="loading" class="btn btn-primary">
+        <span
+          *ngIf="loading"
+          class="spinner-border spinner-border-sm mr-1"
+        ></span>
+        Save
+      </button>
+      <a routerLink="/section-schedules-page" class="btn btn-link">Cancel</a>
+    </div>
+  </div>
+</form>

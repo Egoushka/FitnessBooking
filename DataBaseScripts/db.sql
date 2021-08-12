@@ -1,0 +1,72 @@
+CREATE DATABASE BookingDB
+GO
+USE BookingDB;
+CREATE TABLE Gym(
+    Id INT IDENTITY PRIMARY KEY NOT NULL,
+    [Name] NVARCHAR(100) NOT NULL,
+    [Location] NVARCHAR(150) NOT NULL,
+    [Description] NVARCHAR(100) NOT NULL,
+);
+CREATE TABLE ScheduleStatus(
+    Id INT IDENTITY PRIMARY KEY NOT NULL,
+    [Name] NVARCHAR(100)
+);
+CREATE TABLE VisitType(
+    Id INT IDENTITY PRIMARY KEY NOT NULL,
+    [Name] NVARCHAR(100) NOT NULL
+);
+CREATE TABLE[Role](
+    Id INT IDENTITY PRIMARY KEY NOT NULL,
+    [Name] NVARCHAR(100) NOT NULL
+);
+CREATE TABLE[User](
+    Id INT IDENTITY PRIMARY KEY NOT NULL,
+    RoleId INT NOT NULL,
+    Email NVARCHAR(100) NOT NULL,
+    [Name] NVARCHAR(100) NOT NULL,
+    [Password] NVARCHAR(100) NOT NULL,
+    FOREIGN KEY (RoleId) REFERENCES[Role](Id)
+);
+
+CREATE TABLE Section(
+    Id INT IDENTITY PRIMARY KEY NOT NULL,
+    [Name] NVARCHAR(100) NOT NULL,
+    TypeId INT NOT NULL,
+    GymId INT NOT NULL,
+    FOREIGN KEY (TypeId) REFERENCES VisitType(Id),
+    FOREIGN KEY(GymId) REFERENCES Gym(Id)
+);
+CREATE TABLE SectionSchedule(
+    Id INT PRIMARY KEY IDENTITY NOT NULL,
+    SectionId INT NOT NULL,
+    StartHour TIME(7) NOT NULL,
+    EndHour TIME(7) NOT NULL,
+    FOREIGN KEY(SectionId) REFERENCES Section(Id)
+);
+
+CREATE TABLE Coach(
+    Id INT IDENTITY PRIMARY KEY NOT NULL,
+    SectionId INT,
+    UserId INT,
+    FOREIGN KEY (UserId) REFERENCES[User](Id),
+    FOREIGN KEY (SectionId) REFERENCES Section(Id)
+);
+CREATE TABLE VisitorSchedule (
+    Id INT IDENTITY PRIMARY KEY NOT NULL,
+    SectionScheduleId INT,
+    [Day] DATETIME,
+    UserId INT,
+    VisitTypeId INT,
+    StatusId INT NOT NULL,
+    FOREIGN KEY (UserId) REFERENCES[User](Id),
+    FOREIGN KEY (StatusId) REFERENCES ScheduleStatus(Id),
+    FOREIGN KEY(VisitTypeId) REFERENCES VisitType (Id),
+    FOREIGN KEY(SectionScheduleId) REFERENCES SectionSchedule(Id)
+);
+CREATE TABLE Administrator(
+    Id INT IDENTITY PRIMARY KEY NOT NULL,
+    UserId INT,
+    GymId INT NOT NULL,
+    FOREIGN KEY (UserId) REFERENCES[User](Id),
+    FOREIGN KEY(GymId) REFERENCES Gym(Id)
+);

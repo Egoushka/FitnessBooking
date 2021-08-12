@@ -1,0 +1,61 @@
+<div class="m-a-1">
+  <h2 class="text-xs-center">Sections</h2>
+  <div *ngIf="authService.hasRestrictions(['administrator'])">
+    <td class="text-xs-right">
+      <button class="btn btn-lg btn-dark" (click)="addCoach()">
+        Add coach
+      </button>
+    </td>
+  </div>
+  <table class="table table-bordered table-striped p-a-1">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of sections$">
+        <td class="text-xs-right">
+          {{ item.id }}
+        </td>
+        <td class="text-xs-right">
+          {{ item.name }}
+        </td>
+        <td class="text-xs-right">
+          <button class="btn btn-lg btn-dark" (click)="viewSchedules(item.id)">
+            View Schedules
+          </button>
+        </td>
+        <div *ngIf="authService.hasRestrictions(['administrator'])">
+          <td class="text-xs-right">
+            <button
+              class="btn btn-lg btn-dark"
+              (click)="deleteSection(item.id)"
+            >
+              Delete
+            </button>
+          </td>
+
+          <td class="text-xs-right">
+            <button
+              class="btn btn-lg btn-dark"
+              (click)="editSection(item.id, item.typeId, item.name)"
+            >
+              Edit
+            </button>
+          </td>
+        </div>
+      </tr>
+    </tbody>
+    <tfoot>
+      <div *ngIf="authService.hasRestrictions(['administrator'])">
+        <td class="text-xs-right">
+          <button class="btn btn-lg btn-dark" (click)="addSection()">
+            Add section
+          </button>
+        </td>
+      </div>
+    </tfoot>
+  </table>
+</div>

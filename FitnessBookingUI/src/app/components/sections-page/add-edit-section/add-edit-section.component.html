@@ -1,0 +1,39 @@
+<h1 *ngIf="isAddMode">Add section</h1>
+<h1 *ngIf="!isAddMode">Edit section</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-row">
+    <div *ngIf="isAddMode">
+      <div class="form-group col">
+        Visit Type
+        <select formControlName ="type"  >
+          <option *ngFor="let item of visitTypes" [label]="item"
+          [value]="item"></option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group col">
+      <label>Name</label>
+      <input
+        type="text"
+        formControlName="name"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f.name.errors }"
+      />
+      <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+        <div *ngIf="f.name.errors.reqiired">Name is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <button [disabled]="loading" class="btn btn-primary">
+        <span
+          *ngIf="loading"
+          class="spinner-border spinner-border-sm mr-1"
+        ></span>
+        Save
+      </button>
+      <a routerLink="/sections" class="btn btn-link"
+        >Cancel</a
+      >
+    </div>
+  </div>
+</form>

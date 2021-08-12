@@ -1,0 +1,37 @@
+<div class="m-a-1">
+  <h2 class="text-xs-center">Coaches</h2>
+  <table class="table table-bordered table-striped p-a-1">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>SectionId</th>
+        <th>UserId</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of coaches$">
+        <td class="text-xs-right">
+          {{ item.id }}
+        </td>
+        <td class="text-xs-right">
+          {{ item.sectionId }}
+        </td>
+        <td class="text-xs-right">
+          {{ item.userId }}
+        </td>
+        <td class="text-xs-right">
+          <button class="btn btn-lg btn-dark" (click)='editCoach(item.id,item.userId)'>
+            Edit
+          </button>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <td class="text-xs-right">
+        <button class="btn btn-lg btn-dark" (click)='newCoach()'>
+          Add
+        </button>
+      </td>
+    </tfoot>
+  </table>
+</div>
