@@ -31,11 +31,10 @@ namespace FitnessBooking.Business.Managers
                 Name = newGym.Name
             };
 
-            var answer =  await _gymRepository.AddAsync(gym);
+            Gym answer =  await _gymRepository.AddAsync(gym);
 
             return FromEntityToDto(answer);
         }
-
         public IEnumerable<GymDto> GetGyms(GetGymRequest request)
         {
             IEnumerable<Gym> gyms = _gymRepository.GetAll();

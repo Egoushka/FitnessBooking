@@ -32,7 +32,7 @@ export class SectionManagerApiService {
 
   public get(sectionRequest: SectionRequest) {
     const httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),6
     };
 
     return this.http.get<Section[]>(this.url, {

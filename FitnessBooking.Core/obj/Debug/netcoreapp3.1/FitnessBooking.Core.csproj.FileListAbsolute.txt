@@ -43,3 +43,16 @@ D:\Projects\FitnessBooking\fitnessbookingapi\FitnessBooking\FitnessBooking.Core\
 D:\Projects\FitnessBooking\fitnessbookingapi\FitnessBooking\FitnessBooking.Core\obj\Debug\netcoreapp3.1\FitnessBooking.Core.pdb
 D:\Projects\FitnessBooking\fitnessbookingapi\FitnessBooking\FitnessBooking.Core\obj\Debug\netcoreapp3.1\FitnessBooking.Core.genruntimeconfig.cache
 D:\Projects\FitnessBooking\fitnessbookingapi\FitnessBooking\FitnessBooking.Core\obj\Debug\netcoreapp3.1\FitnessBooking.Core.csproj.AssemblyReference.cache
+D:\Projects\FitnessBooking\FitnessBooking.Core\bin\Debug\netcoreapp3.1\FitnessBooking.Core.deps.json
+D:\Projects\FitnessBooking\FitnessBooking.Core\bin\Debug\netcoreapp3.1\FitnessBooking.Core.runtimeconfig.json
+D:\Projects\FitnessBooking\FitnessBooking.Core\bin\Debug\netcoreapp3.1\FitnessBooking.Core.runtimeconfig.dev.json
+D:\Projects\FitnessBooking\FitnessBooking.Core\bin\Debug\netcoreapp3.1\FitnessBooking.Core.dll
+D:\Projects\FitnessBooking\FitnessBooking.Core\bin\Debug\netcoreapp3.1\FitnessBooking.Core.pdb
+D:\Projects\FitnessBooking\FitnessBooking.Core\obj\Debug\netcoreapp3.1\FitnessBooking.Core.csproj.AssemblyReference.cache
+D:\Projects\FitnessBooking\FitnessBooking.Core\obj\Debug\netcoreapp3.1\FitnessBooking.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\FitnessBooking\FitnessBooking.Core\obj\Debug\netcoreapp3.1\FitnessBooking.Core.AssemblyInfoInputs.cache
+D:\Projects\FitnessBooking\FitnessBooking.Core\obj\Debug\netcoreapp3.1\FitnessBooking.Core.AssemblyInfo.cs
+D:\Projects\FitnessBooking\FitnessBooking.Core\obj\Debug\netcoreapp3.1\FitnessBooking.Core.csproj.CoreCompileInputs.cache
+D:\Projects\FitnessBooking\FitnessBooking.Core\obj\Debug\netcoreapp3.1\FitnessBooking.Core.dll
+D:\Projects\FitnessBooking\FitnessBooking.Core\obj\Debug\netcoreapp3.1\FitnessBooking.Core.pdb
+D:\Projects\FitnessBooking\FitnessBooking.Core\obj\Debug\netcoreapp3.1\FitnessBooking.Core.genruntimeconfig.cache

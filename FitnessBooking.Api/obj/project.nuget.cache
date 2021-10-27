@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HcgySKuXSVoOebN70wGGhPaiX/nG+xnaJkePvi7u3quQFDMiXXwicv1BwRElqo52xrxFV+kKg8MSa/STjUQJ0A==",
+  "dgSpecHash": "o8NFTqSdtoZg8b1ikqj6VbfmPigKmLsXFLgv1LQPm9RaQuYJ8hXPjtNpbECsvKo6nbeQ+phqKfaBGcYd323w4Q==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\FitnessBooking\\fitnessbookingapi\\FitnessBooking\\FitnessBooking.Api\\FitnessBooking.Api.csproj",
+  "projectFilePath": "D:\\Projects\\FitnessBooking\\FitnessBooking.Api\\FitnessBooking.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yehor.hrabovskyi\\.nuget\\packages\\autofac\\6.1.0\\autofac.6.1.0.nupkg.sha512",
     "C:\\Users\\yehor.hrabovskyi\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.1.0\\autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",

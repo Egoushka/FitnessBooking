@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wLG0FHfcdfgf5kXXxYhe1BwrSEDXEfZXUWYGJQATqpXqlr6UOI7yNvqNG/814dJt3JzLl/HGd3iGSb5D1+aohg==",
+  "dgSpecHash": "EZYuhHbkxlxTUfIw1Y4hhmCzZWGWt7kHAgqpkJAj8l7gMTsmE+aTcha1CIz1uQocyeUIhtE8b65vcAkCesuetQ==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\FitnessBooking\\fitnessbookingapi\\FitnessBooking\\FitnessBooking.Data\\FitnessBooking.Data.csproj",
+  "projectFilePath": "D:\\Projects\\FitnessBooking\\FitnessBooking.Data\\FitnessBooking.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yehor.hrabovskyi\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\yehor.hrabovskyi\\.nuget\\packages\\fluentvalidation\\10.0.0\\fluentvalidation.10.0.0.nupkg.sha512",

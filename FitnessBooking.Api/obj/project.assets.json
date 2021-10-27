@@ -7768,24 +7768,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\yehor.hrabovskyi\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\yehor.hrabovskyi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\FitnessBooking\\fitnessbookingapi\\FitnessBooking\\FitnessBooking.Api\\FitnessBooking.Api.csproj",
+      "projectUniqueName": "D:\\Projects\\FitnessBooking\\FitnessBooking.Api\\FitnessBooking.Api.csproj",
       "projectName": "FitnessBooking.Api",
-      "projectPath": "D:\\Projects\\FitnessBooking\\fitnessbookingapi\\FitnessBooking\\FitnessBooking.Api\\FitnessBooking.Api.csproj",
+      "projectPath": "D:\\Projects\\FitnessBooking\\FitnessBooking.Api\\FitnessBooking.Api.csproj",
       "packagesPath": "C:\\Users\\yehor.hrabovskyi\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\FitnessBooking\\fitnessbookingapi\\FitnessBooking\\FitnessBooking.Api\\obj\\",
+      "outputPath": "D:\\Projects\\FitnessBooking\\FitnessBooking.Api\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
         "C:\\Users\\yehor.hrabovskyi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7799,14 +7794,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\Projects\\FitnessBooking\\fitnessbookingapi\\FitnessBooking\\FitnessBooking.Business\\FitnessBooking.Business.csproj": {
-              "projectPath": "D:\\Projects\\FitnessBooking\\fitnessbookingapi\\FitnessBooking\\FitnessBooking.Business\\FitnessBooking.Business.csproj"
+            "D:\\Projects\\FitnessBooking\\FitnessBooking.Business\\FitnessBooking.Business.csproj": {
+              "projectPath": "D:\\Projects\\FitnessBooking\\FitnessBooking.Business\\FitnessBooking.Business.csproj"
             },
-            "D:\\Projects\\FitnessBooking\\fitnessbookingapi\\FitnessBooking\\FitnessBooking.Core\\FitnessBooking.Core.csproj": {
-              "projectPath": "D:\\Projects\\FitnessBooking\\fitnessbookingapi\\FitnessBooking\\FitnessBooking.Core\\FitnessBooking.Core.csproj"
+            "D:\\Projects\\FitnessBooking\\FitnessBooking.Core\\FitnessBooking.Core.csproj": {
+              "projectPath": "D:\\Projects\\FitnessBooking\\FitnessBooking.Core\\FitnessBooking.Core.csproj"
             },
-            "D:\\Projects\\FitnessBooking\\fitnessbookingapi\\FitnessBooking\\FitnessBooking.Data\\FitnessBooking.Data.csproj": {
-              "projectPath": "D:\\Projects\\FitnessBooking\\fitnessbookingapi\\FitnessBooking\\FitnessBooking.Data\\FitnessBooking.Data.csproj"
+            "D:\\Projects\\FitnessBooking\\FitnessBooking.Data\\FitnessBooking.Data.csproj": {
+              "projectPath": "D:\\Projects\\FitnessBooking\\FitnessBooking.Data\\FitnessBooking.Data.csproj"
             }
           }
         }
@@ -7878,7 +7873,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
