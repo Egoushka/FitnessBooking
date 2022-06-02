@@ -1,8 +1,8 @@
-﻿using FitnessBooking.Core.Interfaces.Repositories;
-using FitnessBooking.Core.Models.Infrastructure;
+﻿using System.Threading.Tasks;
+using FitnessBooking.Core.Interfaces.Repositories;
+using FitnessBooking.Core.Models;
 using FitnessBooking.Data.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
 
 namespace FitnessBooking.Data.Repository.Repositories
 {
@@ -10,11 +10,6 @@ namespace FitnessBooking.Data.Repository.Repositories
     {
         public RoleRepository(FitnessBookingContext fitnessBookingContext) : base(fitnessBookingContext)
         {
-        }
-
-        public Task<Role> GetRoleByIdAsync(int id)
-        {
-            return GetAll().FirstOrDefaultAsync(x => x.Id == id);
         }
     }
 }

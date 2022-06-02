@@ -1,30 +1,50 @@
-﻿using FitnessBooking.Core.Interfaces.Repositories;
-using FitnessBooking.Data.Models;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
+using FitnessBooking.Core.Interfaces.Repositories;
+using FitnessBooking.Core.Models.Dto.Gym;
+using FitnessBooking.Data.Models;
 
 namespace FitnessBooking.Data.Repository
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class, new()
     {
-        protected readonly FitnessBookingContext RepositoryContext;
+        private readonly FitnessBookingContext _repositoryContext;
 
-        public Repository(FitnessBookingContext RepositoryContext)
+        protected Repository(FitnessBookingContext repositoryContext)
         {
-            this.RepositoryContext = RepositoryContext;
+            _repositoryContext = repositoryContext;
         }
 
         public IQueryable<TEntity> GetAll()
         {
             try
             {
-                return RepositoryContext.Set<TEntity>();
+                return _repositoryContext.Set<TEntity>();
             }
             catch (Exception ex)
             {
                 throw new Exception($"Couldn't retrieve entities: {ex.Message}");
             }
+        }
+
+        public TEntity GetEntityById(int id)
+        {
+            try
+            {
+                return _repositoryContext.Set<TEntity>().Find(id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Couldn't retrieve entities: {ex.Message}");
+            }
+        }
+
+        public IQueryable<TEntity> Find(Expression<Func<TEntity, bool>> expression)
+        {
+            return _repositoryContext.Set<TEntity>().Where(expression);
         }
 
         public async Task<TEntity> AddAsync(TEntity entity)
@@ -37,14 +57,14 @@ namespace FitnessBooking.Data.Repository
             try
             {
 
-                await RepositoryContext.AddAsync(entity);
-                await RepositoryContext.SaveChangesAsync();
+                await _repositoryContext.AddAsync(entity);
+                await _repositoryContext.SaveChangesAsync();
 
                 return entity;
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.InnerException.Message);
+                Console.WriteLine(ex.InnerException?.Message);
                 throw new Exception($"{nameof(entity)} could not be saved: {ex.Message}");
             }
         }
@@ -58,8 +78,8 @@ namespace FitnessBooking.Data.Repository
 
             try
             {
-                RepositoryContext.Update(entity);
-                await RepositoryContext.SaveChangesAsync();
+                _repositoryContext.Update(entity);
+                await _repositoryContext.SaveChangesAsync();
 
                 return entity;
             }

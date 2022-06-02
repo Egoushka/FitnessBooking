@@ -1,8 +1,8 @@
-﻿using FitnessBooking.Core.Interfaces.Infrastructure;
-using System;
+﻿using System;
 using System.Collections.Concurrent;
 using System.Threading;
 using System.Threading.Tasks;
+using FitnessBooking.Core.Interfaces.Infrastructure;
 
 namespace FitnessBooking.Business.LongRunning
 {

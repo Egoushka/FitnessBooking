@@ -1,5 +1,4 @@
 ﻿using FitnessBooking.Core.Interfaces.Managers;
-using FitnessBooking.Core.Models.Dto.SectionSchredule;
 using FitnessBooking.Core.Models.Dto.User;
 using FitnessBooking.Core.Models.Requests;
 using Microsoft.AspNetCore.Mvc;
@@ -25,7 +24,7 @@ namespace FitnessBooking.Api.Controllers
         [HttpPut]
         public IActionResult Register(RegisterUserDto registerUser)
         {
-            string answer = _userManager.RegisterAsync(registerUser).Result;
+            var answer = _userManager.RegisterAsync(registerUser).Result;
             if (string.IsNullOrEmpty(answer))
             {
                 return BadRequest("Can`t register user");
@@ -42,7 +41,7 @@ namespace FitnessBooking.Api.Controllers
         [HttpPost]
         public IActionResult Login(LoginUserDto loginUser)
         {
-            string answer = _userManager.Login(loginUser);
+            var answer = _userManager.Login(loginUser);
             if (string.IsNullOrEmpty(answer))
             {
                 return BadRequest("Can`t login user");
@@ -57,7 +56,7 @@ namespace FitnessBooking.Api.Controllers
         [HttpGet]
         public IActionResult Get(int? id, int? roleId, string name, string email)
         {
-            GetUserRequest request = new GetUserRequest(id, roleId, email, name);
+            var request = new GetUserRequest(id, roleId, email, name);
 
             var answer = _userManager.Get(request);
             if(answer == null)

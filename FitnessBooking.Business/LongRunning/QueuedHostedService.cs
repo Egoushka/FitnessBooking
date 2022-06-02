@@ -1,9 +1,9 @@
-﻿using FitnessBooking.Core.Interfaces.Infrastructure;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
+﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using FitnessBooking.Core.Interfaces.Infrastructure;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace FitnessBooking.Business.LongRunning
 {

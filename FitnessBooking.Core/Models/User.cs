@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace FitnessBooking.Core.Models.Infrastructure
+﻿namespace FitnessBooking.Core.Models
 {
     public class User
     {

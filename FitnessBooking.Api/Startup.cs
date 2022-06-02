@@ -1,12 +1,13 @@
-﻿using Autofac;
+﻿using System;
+using System.Text;
+using Autofac;
 using FitnessBooking.Api.Extensions;
-using FitnessBooking.Core.Models.Infrastructure;
+using FitnessBooking.Core.Models;
 using FitnessBooking.Core.Validators;
 using FitnessBooking.Data.Models;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
@@ -14,8 +15,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Text;
 
 namespace FitnessBooking.Api
 {
@@ -26,14 +25,14 @@ namespace FitnessBooking.Api
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
-        private EnvironmentDetails environment;
+        private IConfiguration Configuration { get; }
+        private EnvironmentDetails _environment;
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.DisableCachingForAllHttpCalls();
-            environment = services.ConfigurePoco<EnvironmentDetails>(Configuration.GetSection("Environment"));
+            _environment = services.ConfigurePoco<EnvironmentDetails>(Configuration.GetSection("Environment"));
 
             services.AddCors(options =>
             {
@@ -50,7 +49,7 @@ namespace FitnessBooking.Api
             {
                 fv.RegisterValidatorsFromAssemblyContaining<UserValidator>();
             });
-            services.AddAntiforgery(opts => opts.Cookie.Name = "AntiForgery." + environment.ApplicationName);
+            services.AddAntiforgery(opts => opts.Cookie.Name = "AntiForgery." + _environment.ApplicationName);
             services.AddHttpClient();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
@@ -59,14 +58,8 @@ namespace FitnessBooking.Api
 
             services.AddControllers();
 
-            services.AddResponseCaching(options =>
-            {
-                options.UseCaseSensitivePaths = true;
-            });
-            services.AddResponseCompression(options =>
-            {
-                options.EnableForHttps = true;
-            });
+            services.AddResponseCaching(options => { options.UseCaseSensitivePaths = true; });
+            services.AddResponseCompression(options => { options.EnableForHttps = true; });
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -83,15 +76,24 @@ namespace FitnessBooking.Api
                     ValidateIssuerSigningKey = true,
                     ValidIssuer = string.Empty,
                     ValidAudience = string.Empty,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Environment:ApplicationSecret"])),
+                    IssuerSigningKey =
+                        new SymmetricSecurityKey(
+                            Encoding.UTF8.GetBytes(Configuration["Environment:ApplicationSecret"])),
                     ClockSkew = TimeSpan.Zero
                 };
                 services.AddCors();
             });
 
             // Add DB Context here
-            services.AddDbContext<FitnessBookingContext>(options => options.UseLazyLoadingProxies().UseSqlServer(Configuration.GetConnectionString("BloggingDatabase"),
-                options => options.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null)));
+            services
+                .AddDbContext<FitnessBookingContext>(options => options
+                    .UseLazyLoadingProxies()
+                    .UseSqlServer(Configuration.GetConnectionString("BloggingDatabase"),
+                        optionsBuilder =>
+                            optionsBuilder
+                                .EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null)
+                    )
+                );
         }
 
         public void ConfigureContainer(ContainerBuilder builder)

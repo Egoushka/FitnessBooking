@@ -1,7 +1,4 @@
-﻿using FitnessBooking.Core.Models.Dto.Section;
-using System.Collections.Generic;
-
-namespace FitnessBooking.Core.Models.Dto.Gym
+﻿namespace FitnessBooking.Core.Models.Dto.Gym
 {
     public class UpdateGymDto
     {

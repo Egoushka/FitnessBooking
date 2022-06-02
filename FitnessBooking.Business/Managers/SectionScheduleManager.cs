@@ -1,12 +1,12 @@
-﻿using FitnessBooking.Core.Interfaces.Managers;
-using FitnessBooking.Core.Interfaces.Repositories;
-using FitnessBooking.Core.Models.Dto.SectionSchredule;
-using FitnessBooking.Core.Models.Infrastructure;
-using FitnessBooking.Core.Models.Requests;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FitnessBooking.Core.Interfaces.Managers;
+using FitnessBooking.Core.Interfaces.Repositories;
+using FitnessBooking.Core.Models;
+using FitnessBooking.Core.Models.Dto.SectionSchredule;
+using FitnessBooking.Core.Models.Requests;
 
 namespace FitnessBooking.Business.Managers
 {
@@ -21,7 +21,7 @@ namespace FitnessBooking.Business.Managers
 
         public async Task<SectionSchreduleDto> AddNewSectionSchedule(NewSectionSchreduleDto newSectionSchredule)
         {
-            SectionSchedule sectionSchedule = new SectionSchedule()
+            var sectionSchedule = new SectionSchedule
             {
                 EndHour = TimeSpan.FromSeconds(newSectionSchredule.EndHour),
                 SectionId = newSectionSchredule.SectionId,
@@ -61,7 +61,7 @@ namespace FitnessBooking.Business.Managers
 
         public async Task<SectionSchreduleDto> UpdateSectionSchedule(UpdateSectionSchreduleDto updateSectionSchredule)
         {
-            SectionSchedule sectionSchedule = _sectionScheduleRepository.GetAll().Where(gym => gym.Id == updateSectionSchredule.Id).FirstOrDefault();
+            var sectionSchedule = _sectionScheduleRepository.GetAll().FirstOrDefault(gym => gym.Id == updateSectionSchredule.Id);
             if (sectionSchedule == null)
             {
                 return null;
@@ -76,7 +76,7 @@ namespace FitnessBooking.Business.Managers
         }
         public SectionSchreduleDto FromEntityToDto(SectionSchedule sectionSchedule)
         {
-            return new SectionSchreduleDto()
+            return new SectionSchreduleDto
             {
                 Id = sectionSchedule.Id,
                 EndHour = sectionSchedule.EndHour,

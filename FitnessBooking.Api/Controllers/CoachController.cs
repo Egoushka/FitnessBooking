@@ -1,10 +1,8 @@
-﻿using FitnessBooking.Api.Attributes;
-using FitnessBooking.Core.Enums;
+﻿using System.Threading.Tasks;
 using FitnessBooking.Core.Interfaces.Managers;
 using FitnessBooking.Core.Models.Dto.Coach;
 using FitnessBooking.Core.Models.Requests;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 
 namespace FitnessBooking.Api.Controllers
 {
@@ -28,7 +26,7 @@ namespace FitnessBooking.Api.Controllers
        // [RoleBasedAuth(allowedRoles: Roles.Administrator)]
         public async Task<IActionResult> AddNewCoach(NewCoachDto newCoach)
         {
-            CoachDto answer = await _coachManager.AddNewCoach(newCoach);
+            var answer = await _coachManager.AddNewCoach(newCoach);
             if (answer == null)
             {
                 return BadRequest("Everything isn`t good, flowers aren`t colorful, the grass aren`t green");
@@ -41,7 +39,7 @@ namespace FitnessBooking.Api.Controllers
         //[RoleBasedAuth(allowedRoles: Roles.Administrator)]
         public async Task<IActionResult> UpdateCoach(UpdateCoachDto updateCoach)
         {
-            CoachDto answer = await _coachManager.UpdateCoach(updateCoach);
+            var answer = await _coachManager.UpdateCoach(updateCoach);
             if (answer == null)
             {
                 return BadRequest("Everything isn`t good, flowers aren`t colorful, the grass aren`t green");
@@ -53,7 +51,7 @@ namespace FitnessBooking.Api.Controllers
         [HttpGet]
         public IActionResult GetCoaches(int? sectionId)
         {
-            GetCoachRequest request = new GetCoachRequest();
+            var request = new GetCoachRequest();
             request.SectionId = sectionId;
             var answer = _coachManager.GetCoaches(request);
             if (answer == null)

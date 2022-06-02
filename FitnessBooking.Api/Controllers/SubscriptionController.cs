@@ -1,8 +1,8 @@
-﻿using FitnessBooking.Core.Interfaces.Managers;
+﻿using System.Threading.Tasks;
+using FitnessBooking.Core.Interfaces.Managers;
 using FitnessBooking.Core.Models.Dto.VisitorSchedule;
 using FitnessBooking.Core.Models.Requests;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 
 namespace FitnessBooking.Api.Controllers
 {
@@ -21,7 +21,7 @@ namespace FitnessBooking.Api.Controllers
         [Route("subscribe")]
         public async Task<IActionResult> SubscribeAsync(NewVisitorScheduleDto visitorScheduleDto)
         {
-            VisitorScheduleDto answer = await _visitorScheduleManager.Subscribe(visitorScheduleDto);
+            var answer = await _visitorScheduleManager.Subscribe(visitorScheduleDto);
 
             if (answer == null)
             {
@@ -34,7 +34,7 @@ namespace FitnessBooking.Api.Controllers
         [Route("unSubscribe")]
         public async Task<IActionResult> UnSubscribeAsync(RemoveVisitorScheduleDto visitorScheduleDto)
         {
-            VisitorScheduleDto answer = await _visitorScheduleManager.UnSubscribe(visitorScheduleDto);
+            var answer = await _visitorScheduleManager.UnSubscribe(visitorScheduleDto);
 
             if (answer == null)
             {
@@ -47,7 +47,7 @@ namespace FitnessBooking.Api.Controllers
         [Route("updateSubscribe")]
         public async Task<IActionResult> UpdateSubscribeAsync(UpdateVisitorScheduleDto  updateVisitorSchedule)
         {
-            VisitorScheduleDto answer = await _visitorScheduleManager.UpdateSubscribe(updateVisitorSchedule);
+            var answer = await _visitorScheduleManager.UpdateSubscribe(updateVisitorSchedule);
 
             if (answer == null)
             {
@@ -58,7 +58,7 @@ namespace FitnessBooking.Api.Controllers
         [HttpGet]
         public IActionResult GetUserSubscriptions(int? id, int? userId, int? visitorScheduleId)
         {
-            GetVisitorScheduleRequest request = new GetVisitorScheduleRequest(id, userId, visitorScheduleId);
+            var request = new GetVisitorScheduleRequest(id, userId, visitorScheduleId);
             var answer =  _visitorScheduleManager.Get(request);
 
             if (answer == null)

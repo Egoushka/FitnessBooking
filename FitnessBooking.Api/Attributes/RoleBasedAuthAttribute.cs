@@ -1,8 +1,8 @@
-﻿using FitnessBooking.Core.Enums;
+﻿using System.Linq;
+using FitnessBooking.Core.Enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using System.Linq;
 
 namespace FitnessBooking.Api.Attributes
 {
@@ -29,7 +29,6 @@ namespace FitnessBooking.Api.Attributes
                 context.Result = new UnauthorizedResult();
                 return;
             }
-            return;
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using FitnessBooking.Core.Models.Infrastructure;
+﻿using FitnessBooking.Core.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace FitnessBooking.Data.Models

@@ -6,10 +6,10 @@ namespace FitnessBooking.Core.Models.Requests
     {
         public GetSectionShreduleRequest(int? id, int? sectionId, TimeSpan? startHour, TimeSpan? endHour)
         {
-            this.Id = id;
-            this.SectionId = sectionId;
-            this.StartHour = startHour;
-            this.EndHour = endHour;
+            Id = id;
+            SectionId = sectionId;
+            StartHour = startHour;
+            EndHour = endHour;
         }
         public int? Id { get; set; }
         public int? SectionId { get; set; }

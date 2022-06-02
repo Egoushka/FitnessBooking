@@ -1,7 +1,7 @@
-﻿using FitnessBooking.Core.Interfaces.Singletons;
-using System;
+﻿using System;
 using System.Security.Cryptography;
 using System.Text;
+using FitnessBooking.Core.Interfaces.Singletons;
 
 namespace FitnessBooking.Core.Tools
 {
@@ -9,15 +9,15 @@ namespace FitnessBooking.Core.Tools
     {
         public string GetHash(string input)
         {
-            StringBuilder answer = new StringBuilder();
+            var answer = new StringBuilder();
 
-            using (SHA256 hashAlgorithm = SHA256.Create())
+            using (var hashAlgorithm = SHA256.Create())
             {
-                byte[] data = hashAlgorithm.ComputeHash(Encoding.UTF8.GetBytes(input));
+                var data = hashAlgorithm.ComputeHash(Encoding.UTF8.GetBytes(input));
 
-                for (int i = 0; i < data.Length; ++i)
+                foreach (var item in data)
                 {
-                    answer.Append(data[i].ToString("x2"));
+                    answer.Append(item.ToString("x2"));
                 }
             }
             return answer.ToString();

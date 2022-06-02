@@ -1,14 +1,13 @@
-﻿using FitnessBooking.Core.Enums;
+﻿using System.Collections;
+using System.Linq;
+using System.Threading.Tasks;
+using FitnessBooking.Core.Enums;
 using FitnessBooking.Core.Interfaces.Managers;
 using FitnessBooking.Core.Interfaces.Repositories;
 using FitnessBooking.Core.Interfaces.Singletons;
-using FitnessBooking.Core.Models.Dto.SectionSchredule;
+using FitnessBooking.Core.Models;
 using FitnessBooking.Core.Models.Dto.User;
-using FitnessBooking.Core.Models.Infrastructure;
 using FitnessBooking.Core.Models.Requests;
-using System.Collections;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace FitnessBooking.Business.Managers
 {
@@ -37,7 +36,7 @@ namespace FitnessBooking.Business.Managers
                 //return wrong pass
                 return null;
             }
-            AuthenticateUserDto authenticateUser = new AuthenticateUserDto()
+            var authenticateUser = new AuthenticateUserDto
             {
                 Id = result.Id,
                 Email = result.Email,
@@ -45,13 +44,13 @@ namespace FitnessBooking.Business.Managers
                 Password = result.Password,
                 Role = (Roles)result.RoleId
             };
-            string jwtToken = _jwtTokenUtils.GenerateJwtToken(authenticateUser);
+            var jwtToken = _jwtTokenUtils.GenerateJwtToken(authenticateUser);
             return jwtToken;
         }
 
         public async Task<string> RegisterAsync(RegisterUserDto registerUser)
         {
-            User user = new User()
+            var user = new User
             {
                 Email = registerUser.Email,
                 Name = registerUser.Name,
@@ -59,8 +58,8 @@ namespace FitnessBooking.Business.Managers
                 RoleId = registerUser.RoleId
             };
             user = await _userRepository.AddAsync(user);
-            AuthenticateUserDto authenticateUser = MapToDto(user);
-            string jwtToken = _jwtTokenUtils.GenerateJwtToken(authenticateUser);
+            var authenticateUser = MapToDto(user);
+            var jwtToken = _jwtTokenUtils.GenerateJwtToken(authenticateUser);
             return jwtToken;
         }
         public IEnumerable Get(GetUserRequest request)
@@ -86,7 +85,7 @@ namespace FitnessBooking.Business.Managers
         }
         public AuthenticateUserDto MapToDto(User user)
         {
-            return new AuthenticateUserDto()
+            return new AuthenticateUserDto
             {
                 Id = user.Id,
                 Email = user.Email,

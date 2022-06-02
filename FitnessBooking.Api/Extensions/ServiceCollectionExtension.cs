@@ -1,4 +1,7 @@
-﻿using Autofac;
+﻿using System;
+using System.Linq;
+using System.Reflection;
+using Autofac;
 using Autofac.Builder;
 using FitnessBooking.Api.Helpers;
 using FitnessBooking.Business.LongRunning;
@@ -7,9 +10,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Linq;
-using System.Reflection;
 
 namespace FitnessBooking.Api.Extensions
 {
@@ -84,7 +84,7 @@ namespace FitnessBooking.Api.Extensions
         public static ContainerBuilder RegisterAllServices(this ContainerBuilder containerBuilder)
         {
             containerBuilder.UseAllOfType<ISingletonService>(ServiceLifetime.Singleton);
-            containerBuilder.UseAllOfType<IScopedService>(ServiceLifetime.Scoped);
+            containerBuilder.UseAllOfType<IScopedService>();
             containerBuilder.UseAllOfType<ITransientService>(ServiceLifetime.Transient);
 
             return containerBuilder;

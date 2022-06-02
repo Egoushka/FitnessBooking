@@ -1,10 +1,6 @@
 ﻿using FitnessBooking.Core.Interfaces.Managers;
-using FitnessBooking.Core.Models.Dto.Gym;
-using FitnessBooking.Core.Models.Dto.Section;
-using FitnessBooking.Core.Models.Infrastructure;
 using FitnessBooking.Core.Models.Requests;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 
 namespace FitnessBooking.Api.Controllers
 {
@@ -22,7 +18,7 @@ namespace FitnessBooking.Api.Controllers
         [HttpGet]
         public IActionResult GetGymsAndSection(GetGymRequest  request)
         {
-            IEnumerable<GymDto> gyms = _gymManager.GetGyms(request);
+            var gyms = _gymManager.GetGyms(request);
 
             var response = new
             {

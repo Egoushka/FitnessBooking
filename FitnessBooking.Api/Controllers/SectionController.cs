@@ -1,10 +1,10 @@
-﻿using FitnessBooking.Api.Attributes;
+﻿using System.Threading.Tasks;
+using FitnessBooking.Api.Attributes;
 using FitnessBooking.Core.Enums;
 using FitnessBooking.Core.Interfaces.Managers;
 using FitnessBooking.Core.Models.Dto.Section;
 using FitnessBooking.Core.Models.Requests;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 
 namespace FitnessBooking.Api.Controllers
 {
@@ -33,7 +33,7 @@ namespace FitnessBooking.Api.Controllers
         }
 
         [HttpPut]
-        [RoleBasedAuth(allowedRoles: Roles.Administrator)]
+        [RoleBasedAuth(Roles.Administrator)]
         public async Task<IActionResult> UpdateSection(UpdateSectionDto updateSection)
         {
             var answer = await _sectionManager.UpdateSection(updateSection);
@@ -48,7 +48,7 @@ namespace FitnessBooking.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetSections(string name, int? id, int? typeId, int? gymId, int? coachId)
         {
-            GetSectionRequest sectionRequest = new GetSectionRequest(name, id, typeId, gymId, coachId);
+            var sectionRequest = new GetSectionRequest(name, id, typeId, gymId, coachId);
             var answer = _sectionManager.GetSections(sectionRequest);
             if (answer == null)
             {

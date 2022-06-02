@@ -5,6 +5,6 @@ namespace FitnessBooking.Core.Interfaces.Singletons
 {
     public interface IJwtTokenUtils : ISingletonService
     {
-        public string GenerateJwtToken(AuthenticateUserDto authenticateUseruser);
+        public string GenerateJwtToken(AuthenticateUserDto authenticateUserDto);
     }
 }

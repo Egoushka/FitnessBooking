@@ -1,8 +1,8 @@
-﻿using FitnessBooking.Core.Interfaces.Infrastructure;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using FitnessBooking.Core.Interfaces.Infrastructure;
 using FitnessBooking.Core.Models.Dto.Section;
 using FitnessBooking.Core.Models.Requests;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace FitnessBooking.Core.Interfaces.Managers
 {

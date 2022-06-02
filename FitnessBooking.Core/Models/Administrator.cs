@@ -1,4 +1,4 @@
-﻿namespace FitnessBooking.Core.Models.Infrastructure
+﻿namespace FitnessBooking.Core.Models
 {
     public class Administrator
     {

@@ -13,7 +13,7 @@ namespace FitnessBooking.Api.Controllers
     {
         [HttpGet]
         [Route("visitor")]
-        [RoleBasedAuth(allowedRoles: Roles.Visitor)]
+        [RoleBasedAuth(Roles.Visitor)]
         public IActionResult VisitorTest()
         {
             return Ok("visitor page");
@@ -21,7 +21,7 @@ namespace FitnessBooking.Api.Controllers
 
         [HttpGet]
         [Route("admin")]
-        [RoleBasedAuth(allowedRoles: Roles.Administrator)]
+        [RoleBasedAuth(Roles.Administrator)]
         public IActionResult AdminTest()
         {
             return Ok("admin page");
@@ -29,7 +29,7 @@ namespace FitnessBooking.Api.Controllers
 
         [HttpGet]
         [Route("coach")]
-        [RoleBasedAuth(allowedRoles: Roles.Coach)]
+        [RoleBasedAuth(Roles.Coach)]
         public IActionResult CoachTest()
         {
             return Ok("coach page");
@@ -37,7 +37,7 @@ namespace FitnessBooking.Api.Controllers
 
         [HttpGet]
         [Route("register")]
-        [RoleBasedAuth(allowedRoles: Roles.Administrator | Roles.Coach | Roles.Visitor)]
+        [RoleBasedAuth(Roles.Administrator | Roles.Coach | Roles.Visitor)]
         public IActionResult RegisterTest()
         {
             return Ok("Page for visitors, admins, coaches");

@@ -1,5 +1,6 @@
-﻿using Autofac.Extensions.DependencyInjection;
-using System.Reflection;
+﻿using System.Reflection;
+using Autofac.Extensions.DependencyInjection;
+using FitnessBooking.Business.Infrastructure;
 
 namespace FitnessBooking.Api.Helpers
 {
@@ -10,7 +11,7 @@ namespace FitnessBooking.Api.Helpers
             return new[]
             {
                 typeof(ServiceCollectionExtensions).Assembly,
-                typeof(Business.Infrastructure.IRegisterDependency).Assembly,
+                typeof(IRegisterDependency).Assembly,
                 typeof(Core.Interfaces.Infrastructure.IRegisterDependency).Assembly,
                 typeof(Data.Infrastructure.IRegisterDependency).Assembly
             };

@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\FitnessBooking\\FitnessBooking.Api\\FitnessBooking.Api.csproj": {}
+    "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Api\\FitnessBooking.Api.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\FitnessBooking\\FitnessBooking.Api\\FitnessBooking.Api.csproj": {
+    "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Api\\FitnessBooking.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\FitnessBooking\\FitnessBooking.Api\\FitnessBooking.Api.csproj",
+        "projectUniqueName": "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Api\\FitnessBooking.Api.csproj",
         "projectName": "FitnessBooking.Api",
-        "projectPath": "D:\\Projects\\FitnessBooking\\FitnessBooking.Api\\FitnessBooking.Api.csproj",
-        "packagesPath": "C:\\Users\\yehor.hrabovskyi\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\FitnessBooking\\FitnessBooking.Api\\obj\\",
+        "projectPath": "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Api\\FitnessBooking.Api.csproj",
+        "packagesPath": "C:\\Users\\Yehor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Api\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\yehor.hrabovskyi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Yehor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,14 +32,14 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Projects\\FitnessBooking\\FitnessBooking.Business\\FitnessBooking.Business.csproj": {
-                "projectPath": "D:\\Projects\\FitnessBooking\\FitnessBooking.Business\\FitnessBooking.Business.csproj"
+              "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Business\\FitnessBooking.Business.csproj": {
+                "projectPath": "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Business\\FitnessBooking.Business.csproj"
               },
-              "D:\\Projects\\FitnessBooking\\FitnessBooking.Core\\FitnessBooking.Core.csproj": {
-                "projectPath": "D:\\Projects\\FitnessBooking\\FitnessBooking.Core\\FitnessBooking.Core.csproj"
+              "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Core\\FitnessBooking.Core.csproj": {
+                "projectPath": "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Core\\FitnessBooking.Core.csproj"
               },
-              "D:\\Projects\\FitnessBooking\\FitnessBooking.Data\\FitnessBooking.Data.csproj": {
-                "projectPath": "D:\\Projects\\FitnessBooking\\FitnessBooking.Data\\FitnessBooking.Data.csproj"
+              "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Data\\FitnessBooking.Data.csproj": {
+                "projectPath": "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Data\\FitnessBooking.Data.csproj"
               }
             }
           }
@@ -107,21 +111,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Projects\\FitnessBooking\\FitnessBooking.Business\\FitnessBooking.Business.csproj": {
+    "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Business\\FitnessBooking.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\FitnessBooking\\FitnessBooking.Business\\FitnessBooking.Business.csproj",
+        "projectUniqueName": "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Business\\FitnessBooking.Business.csproj",
         "projectName": "FitnessBooking.Business",
-        "projectPath": "D:\\Projects\\FitnessBooking\\FitnessBooking.Business\\FitnessBooking.Business.csproj",
-        "packagesPath": "C:\\Users\\yehor.hrabovskyi\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\FitnessBooking\\FitnessBooking.Business\\obj\\",
+        "projectPath": "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Business\\FitnessBooking.Business.csproj",
+        "packagesPath": "C:\\Users\\Yehor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Business\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\yehor.hrabovskyi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Yehor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -135,11 +143,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Projects\\FitnessBooking\\FitnessBooking.Core\\FitnessBooking.Core.csproj": {
-                "projectPath": "D:\\Projects\\FitnessBooking\\FitnessBooking.Core\\FitnessBooking.Core.csproj"
+              "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Core\\FitnessBooking.Core.csproj": {
+                "projectPath": "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Core\\FitnessBooking.Core.csproj"
               },
-              "D:\\Projects\\FitnessBooking\\FitnessBooking.Data\\FitnessBooking.Data.csproj": {
-                "projectPath": "D:\\Projects\\FitnessBooking\\FitnessBooking.Data\\FitnessBooking.Data.csproj"
+              "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Data\\FitnessBooking.Data.csproj": {
+                "projectPath": "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Data\\FitnessBooking.Data.csproj"
               }
             }
           }
@@ -192,25 +200,32 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Projects\\FitnessBooking\\FitnessBooking.Core\\FitnessBooking.Core.csproj": {
+    "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Core\\FitnessBooking.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\FitnessBooking\\FitnessBooking.Core\\FitnessBooking.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Core\\FitnessBooking.Core.csproj",
         "projectName": "FitnessBooking.Core",
-        "projectPath": "D:\\Projects\\FitnessBooking\\FitnessBooking.Core\\FitnessBooking.Core.csproj",
-        "packagesPath": "C:\\Users\\yehor.hrabovskyi\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\FitnessBooking\\FitnessBooking.Core\\obj\\",
+        "projectPath": "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Core\\FitnessBooking.Core.csproj",
+        "packagesPath": "C:\\Users\\Yehor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Core\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\yehor.hrabovskyi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Yehor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -274,25 +289,32 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Projects\\FitnessBooking\\FitnessBooking.Data\\FitnessBooking.Data.csproj": {
+    "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Data\\FitnessBooking.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\FitnessBooking\\FitnessBooking.Data\\FitnessBooking.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Data\\FitnessBooking.Data.csproj",
         "projectName": "FitnessBooking.Data",
-        "projectPath": "D:\\Projects\\FitnessBooking\\FitnessBooking.Data\\FitnessBooking.Data.csproj",
-        "packagesPath": "C:\\Users\\yehor.hrabovskyi\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\FitnessBooking\\FitnessBooking.Data\\obj\\",
+        "projectPath": "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Data\\FitnessBooking.Data.csproj",
+        "packagesPath": "C:\\Users\\Yehor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Data\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\yehor.hrabovskyi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Yehor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -306,8 +328,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Projects\\FitnessBooking\\FitnessBooking.Core\\FitnessBooking.Core.csproj": {
-                "projectPath": "D:\\Projects\\FitnessBooking\\FitnessBooking.Core\\FitnessBooking.Core.csproj"
+              "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Core\\FitnessBooking.Core.csproj": {
+                "projectPath": "C:\\Users\\Yehor\\RiderProjects\\FitnessBooking\\FitnessBooking.Core\\FitnessBooking.Core.csproj"
               }
             }
           }
@@ -352,11 +374,14 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

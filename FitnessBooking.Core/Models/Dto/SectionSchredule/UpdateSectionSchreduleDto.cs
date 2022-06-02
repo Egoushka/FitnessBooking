@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace FitnessBooking.Core.Models.Dto.SectionSchredule
+﻿namespace FitnessBooking.Core.Models.Dto.SectionSchredule
 {
     public class UpdateSectionSchreduleDto
     {

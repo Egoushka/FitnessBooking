@@ -1,10 +1,10 @@
-﻿using FitnessBooking.Api.Attributes;
+﻿using System.Threading.Tasks;
+using FitnessBooking.Api.Attributes;
 using FitnessBooking.Core.Enums;
 using FitnessBooking.Core.Interfaces.Managers;
 using FitnessBooking.Core.Models.Dto.Gym;
 using FitnessBooking.Core.Models.Requests;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 
 namespace FitnessBooking.Api.Controllers
 {
@@ -25,10 +25,10 @@ namespace FitnessBooking.Api.Controllers
         }
 
         [HttpPost]
-        [RoleBasedAuth(allowedRoles: Roles.Administrator)]
+        [RoleBasedAuth(Roles.Administrator)]
         public async Task<IActionResult> AddNewGym(NewGymDto newGym)
         {
-            GymDto answer = await _gymManager.AddNewGym(newGym);
+            var answer = await _gymManager.AddNewGym(newGym);
             if (answer == null)
             {
                 return BadRequest("Can`t add gym");
@@ -40,7 +40,7 @@ namespace FitnessBooking.Api.Controllers
         [HttpPut]
         public async Task<IActionResult> UpdateGym(UpdateGymDto updateGym)
         {
-            GymDto answer = await _gymManager.UpdateGym(updateGym);
+            var answer = await _gymManager.UpdateGym(updateGym);
             if (answer == null)
             {
                 return BadRequest("Can`t update gym");
@@ -52,7 +52,7 @@ namespace FitnessBooking.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetGyms(string name, string location)
         {
-            GetGymRequest gymRequest = new GetGymRequest(name, location);
+            var gymRequest = new GetGymRequest(name, location);
             var answer = _gymManager.GetGyms(gymRequest);
             if (answer == null)
             {

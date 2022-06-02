@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace FitnessBooking.Core.Models.Dto.Section
+﻿namespace FitnessBooking.Core.Models.Dto.Section
 {
     public class NewSectionDto
     {

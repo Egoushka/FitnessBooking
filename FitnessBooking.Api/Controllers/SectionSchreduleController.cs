@@ -1,11 +1,11 @@
-﻿using FitnessBooking.Api.Attributes;
+﻿using System;
+using System.Threading.Tasks;
+using FitnessBooking.Api.Attributes;
 using FitnessBooking.Core.Enums;
 using FitnessBooking.Core.Interfaces.Managers;
 using FitnessBooking.Core.Models.Dto.SectionSchredule;
 using FitnessBooking.Core.Models.Requests;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Threading.Tasks;
 
 namespace FitnessBooking.Api.Controllers
 {
@@ -21,10 +21,10 @@ namespace FitnessBooking.Api.Controllers
         }
 
         [HttpPost]
-        [RoleBasedAuth(allowedRoles: Roles.Administrator)]
+        [RoleBasedAuth(Roles.Administrator)]
         public async Task<IActionResult> AddNewSectionScheduleAsync(NewSectionSchreduleDto newSection)
         {
-            SectionSchreduleDto answer = await _sectionScheduleManager.AddNewSectionSchedule(newSection);
+            var answer = await _sectionScheduleManager.AddNewSectionSchedule(newSection);
 
             if (answer == null)
             {
@@ -35,10 +35,10 @@ namespace FitnessBooking.Api.Controllers
         }
 
         [HttpPut]
-        [RoleBasedAuth(allowedRoles: Roles.Administrator)]
+        [RoleBasedAuth(Roles.Administrator)]
         public async Task<IActionResult> UpdateSectionShredule(UpdateSectionSchreduleDto updateSection)
         {
-            SectionSchreduleDto answer = await _sectionScheduleManager.UpdateSectionSchedule(updateSection);
+            var answer = await _sectionScheduleManager.UpdateSectionSchedule(updateSection);
 
             if (answer == null)
             {
@@ -51,7 +51,7 @@ namespace FitnessBooking.Api.Controllers
         [HttpGet]
         public IActionResult GetSectionShredules(int? id, int? sectionId, TimeSpan? startHour, TimeSpan? endHour)
         {
-            GetSectionShreduleRequest request = new GetSectionShreduleRequest(id, sectionId, startHour, endHour);
+            var request = new GetSectionShreduleRequest(id, sectionId, startHour, endHour);
             var answer = _sectionScheduleManager.GetSectionSchedules(request);
             if (answer == null)
             {

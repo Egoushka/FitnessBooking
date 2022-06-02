@@ -1,7 +1,6 @@
-﻿using FitnessBooking.Core.Enums;
-using System;
+﻿using System;
 
-namespace FitnessBooking.Core.Models.Infrastructure
+namespace FitnessBooking.Core.Models
 {
     public class VisitorSchedule
     {
