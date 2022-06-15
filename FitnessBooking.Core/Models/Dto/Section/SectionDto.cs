@@ -18,6 +18,8 @@
         public string Name { get; set; }
         public int TypeId { get; set; }
         public int GymId { get; set; }
+
+
         public static Models.Section FromDtoToEntity(SectionDto section)
         {
             return new Models.Section

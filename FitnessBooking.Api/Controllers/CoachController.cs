@@ -23,7 +23,7 @@ namespace FitnessBooking.Api.Controllers
         }
 
         [HttpPost]
-       // [RoleBasedAuth(allowedRoles: Roles.Administrator)]
+        // [RoleBasedAuth(allowedRoles: Roles.Administrator)]
         public async Task<IActionResult> AddNewCoach(NewCoachDto newCoach)
         {
             var answer = await _coachManager.AddNewCoach(newCoach);
@@ -51,8 +51,10 @@ namespace FitnessBooking.Api.Controllers
         [HttpGet]
         public IActionResult GetCoaches(int? sectionId)
         {
-            var request = new GetCoachRequest();
-            request.SectionId = sectionId;
+            var request = new GetCoachRequest
+            {
+                SectionId = sectionId
+            };
             var answer = _coachManager.GetCoaches(request);
             if (answer == null)
             {

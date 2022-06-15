@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using FitnessBooking.Core.Interfaces.Repositories;
-using FitnessBooking.Core.Models.Dto.Gym;
 using FitnessBooking.Data.Models;
 
 namespace FitnessBooking.Data.Repository
@@ -44,7 +42,8 @@ namespace FitnessBooking.Data.Repository
 
         public IQueryable<TEntity> Find(Expression<Func<TEntity, bool>> expression)
         {
-            return _repositoryContext.Set<TEntity>().Where(expression);
+            var result = _repositoryContext.Set<TEntity>().ToList().AsQueryable().Where(expression);
+            return result;
         }
 
         public async Task<TEntity> AddAsync(TEntity entity)
@@ -56,7 +55,6 @@ namespace FitnessBooking.Data.Repository
 
             try
             {
-
                 await _repositoryContext.AddAsync(entity);
                 await _repositoryContext.SaveChangesAsync();
 

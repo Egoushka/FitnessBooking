@@ -56,3 +56,16 @@ D:\Projects\FitnessBooking\FitnessBooking.Core\obj\Debug\netcoreapp3.1\FitnessBo
 D:\Projects\FitnessBooking\FitnessBooking.Core\obj\Debug\netcoreapp3.1\FitnessBooking.Core.dll
 D:\Projects\FitnessBooking\FitnessBooking.Core\obj\Debug\netcoreapp3.1\FitnessBooking.Core.pdb
 D:\Projects\FitnessBooking\FitnessBooking.Core\obj\Debug\netcoreapp3.1\FitnessBooking.Core.genruntimeconfig.cache
+C:\Users\Yehor\RiderProjects\FitnessBooking\FitnessBooking.Core\bin\Debug\netcoreapp3.1\FitnessBooking.Core.deps.json
+C:\Users\Yehor\RiderProjects\FitnessBooking\FitnessBooking.Core\bin\Debug\netcoreapp3.1\FitnessBooking.Core.runtimeconfig.json
+C:\Users\Yehor\RiderProjects\FitnessBooking\FitnessBooking.Core\bin\Debug\netcoreapp3.1\FitnessBooking.Core.runtimeconfig.dev.json
+C:\Users\Yehor\RiderProjects\FitnessBooking\FitnessBooking.Core\bin\Debug\netcoreapp3.1\FitnessBooking.Core.dll
+C:\Users\Yehor\RiderProjects\FitnessBooking\FitnessBooking.Core\bin\Debug\netcoreapp3.1\FitnessBooking.Core.pdb
+C:\Users\Yehor\RiderProjects\FitnessBooking\FitnessBooking.Core\obj\Debug\netcoreapp3.1\FitnessBooking.Core.csproj.AssemblyReference.cache
+C:\Users\Yehor\RiderProjects\FitnessBooking\FitnessBooking.Core\obj\Debug\netcoreapp3.1\FitnessBooking.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Yehor\RiderProjects\FitnessBooking\FitnessBooking.Core\obj\Debug\netcoreapp3.1\FitnessBooking.Core.AssemblyInfoInputs.cache
+C:\Users\Yehor\RiderProjects\FitnessBooking\FitnessBooking.Core\obj\Debug\netcoreapp3.1\FitnessBooking.Core.AssemblyInfo.cs
+C:\Users\Yehor\RiderProjects\FitnessBooking\FitnessBooking.Core\obj\Debug\netcoreapp3.1\FitnessBooking.Core.csproj.CoreCompileInputs.cache
+C:\Users\Yehor\RiderProjects\FitnessBooking\FitnessBooking.Core\obj\Debug\netcoreapp3.1\FitnessBooking.Core.dll
+C:\Users\Yehor\RiderProjects\FitnessBooking\FitnessBooking.Core\obj\Debug\netcoreapp3.1\FitnessBooking.Core.pdb
+C:\Users\Yehor\RiderProjects\FitnessBooking\FitnessBooking.Core\obj\Debug\netcoreapp3.1\FitnessBooking.Core.genruntimeconfig.cache

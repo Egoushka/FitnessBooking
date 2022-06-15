@@ -4,12 +4,13 @@
     {
         public GetSectionRequest(string name, int? id, int? typeId, int? gymId, int? coachId)
         {
-            this.Id = id;
-            this.Name = name;
-            this.TypeId = typeId;
-            this.GymId = gymId;
-            this.CoachId = coachId;
+            Id = id;
+            Name = name;
+            TypeId = typeId;
+            GymId = gymId;
+            CoachId = coachId;
         }
+
         public int? Id { get; set; }
         public string Name { get; set; }
         public int? TypeId { get; set; }

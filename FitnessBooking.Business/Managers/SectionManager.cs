@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FitnessBooking.Core.Interfaces.Managers;
@@ -27,6 +26,7 @@ namespace FitnessBooking.Business.Managers
                 GymId = newSection.GymId,
                 TypeId = newSection.TypeId,
             };
+
             var answer = await _sectionRepository.AddAsync(section);
 
             return new SectionDto(answer);
@@ -39,6 +39,7 @@ namespace FitnessBooking.Business.Managers
             {
                 return null;
             }
+
             section.GymId = updateSection.GymId;
             section.Name = updateSection.Name;
             section.TypeId = updateSection.TypeId;
@@ -46,13 +47,12 @@ namespace FitnessBooking.Business.Managers
             var answer = await _sectionRepository.UpdateAsync(section);
 
             return new SectionDto(answer);
-
         }
 
         public IEnumerable<SectionDto> GetSections(GetSectionRequest request)
         {
             return _sectionRepository
-                .Find(section => section.Equals(request))
+                .Find(section => section.IsAppreciateToRequest(request))
                 .AsEnumerable()
                 .Select(section => new SectionDto(section));
         }

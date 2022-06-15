@@ -14,7 +14,7 @@ import { UserRequest } from 'src/app/model/requests/user.request';
 export class UserManagerApiService {
   constructor(private http: HttpClient) {}
 
-  private url = environment.baseUrl + 'user/';
+  private url = environment.baseUrl + 'User/';
 
   public putRegistration(user: UserRegisterModel): any {
     const endpointUrl = this.url;

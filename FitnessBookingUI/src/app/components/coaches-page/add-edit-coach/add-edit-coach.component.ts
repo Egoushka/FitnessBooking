@@ -32,7 +32,6 @@ export class AddEditCoachComponent implements OnInit {
       .get(null, Roles.Coach)
       .subscribe((users) => {
         this.users = users
-        console.log(this.users)
       });
 
     this.form = this.formBuilder.group({
@@ -59,6 +58,7 @@ export class AddEditCoachComponent implements OnInit {
   }
 
   private createCoach(): void {
+    console.log(this.sectionId + " " + this.findCoachInUsersByName(this.f.coach.value))
 
     this.coachService
       .add(this.sectionId, this.findCoachInUsersByName(this.f.coach.value))
@@ -67,16 +67,21 @@ export class AddEditCoachComponent implements OnInit {
       });
   }
   findCoachInUsersByName(coachName: string): number{
+    let result = null;
     this.users.forEach(item => {
-      if(item.name == coachName)
-        return item.id;
+      if(item.name == coachName){
+        result = item.id;
+      }
     });
-    Swal.fire({
-      icon: 'error',
-      title: 'Oops...',
-      text: "Some error occured in add-edit-coach-component method -> findCoachInUsersByName. Its suppose to be error with names comparing"
-    })
-    return null;
+    if(!result){
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: "Some error occured in add-edit-coach-component method -> findCoachInUsersByName. Its suppose to be error with names comparing"
+      })
+    }
+    
+    return result;
   }
   private exit() {
     sessionStorage.removeItem('coaches');

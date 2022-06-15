@@ -2,14 +2,15 @@
 {
     public class GetVisitorScheduleRequest
     {
-        public int? Id { get; set; }
-        public int? UserId { get; set; }
-        public int? VisitorScheduleId { get; set; }
-        public GetVisitorScheduleRequest(int? id, int? userId, int? visitorScheduleId)
+        public GetVisitorScheduleRequest(int? id, int? userId, int? sectionScheduleId)
         {
             Id = id;
             UserId = userId;
-            VisitorScheduleId = visitorScheduleId;
+            SectionScheduleId = sectionScheduleId;
         }
+
+        public int? Id { get; set; }
+        public int? UserId { get; set; }
+        public int? SectionScheduleId { get; set; }
     }
 }

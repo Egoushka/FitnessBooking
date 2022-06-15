@@ -4,6 +4,21 @@ namespace FitnessBooking.Core.Models.Dto.VisitorSchedule
 {
     public class UpdateVisitorScheduleDto
     {
+        public UpdateVisitorScheduleDto(Models.VisitorSchedule visitorSchedule) :
+            this(visitorSchedule.Id, visitorSchedule.UserId, visitorSchedule.Day, visitorSchedule.SectionScheduleId,
+                visitorSchedule.StatusId)
+        {
+        }
+
+        public UpdateVisitorScheduleDto(int id, int userId, DateTime day, int sectionScheduleId, int statusId)
+        {
+            Id = id;
+            UserId = userId;
+            Day = day;
+            SectionScheduleId = sectionScheduleId;
+            StatusId = statusId;
+        }
+
         public int Id { get; set; }
         public int UserId { get; set; }
         public DateTime Day { get; set; }

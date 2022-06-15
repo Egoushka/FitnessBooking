@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using FitnessBooking.Core.Interfaces.Managers;
 using FitnessBooking.Core.Interfaces.Repositories;
 using FitnessBooking.Core.Models;
-using FitnessBooking.Core.Models.Dto.SectionSchredule;
+using FitnessBooking.Core.Models.Dto.SectionSchedule;
 using FitnessBooking.Core.Models.Requests;
 
 namespace FitnessBooking.Business.Managers
@@ -19,70 +19,41 @@ namespace FitnessBooking.Business.Managers
             _sectionScheduleRepository = sectionScheduleRepository;
         }
 
-        public async Task<SectionSchreduleDto> AddNewSectionSchedule(NewSectionSchreduleDto newSectionSchredule)
+        public async Task<SectionScheduleDto> AddNewSectionSchedule(NewSectionScheduleDto newSectionSchedule)
         {
             var sectionSchedule = new SectionSchedule
             {
-                EndHour = TimeSpan.FromSeconds(newSectionSchredule.EndHour),
-                SectionId = newSectionSchredule.SectionId,
-                StartHour = TimeSpan.FromSeconds(newSectionSchredule.StartHour)
+                EndHour = TimeSpan.FromSeconds(newSectionSchedule.EndHour),
+                SectionId = newSectionSchedule.SectionId,
+                StartHour = TimeSpan.FromSeconds(newSectionSchedule.StartHour)
             };
             var result = await _sectionScheduleRepository.AddAsync(sectionSchedule);
-            return FromEntityToDto(result);
+            return new SectionScheduleDto(result);
         }
 
-        public IEnumerable<SectionSchreduleDto> GetSectionSchedules(GetSectionShreduleRequest request)
+        public IEnumerable<SectionScheduleDto> GetSectionSchedules(GetSectionScheduleRequest request)
         {
-            IEnumerable<SectionSchedule> sectionShredules = _sectionScheduleRepository.GetAll();
-
-            if (request.Id != null)
-            {
-                sectionShredules = sectionShredules.Where(sectionShredule =>
-                sectionShredule.Id == request.Id);
-            }
-            if (request.SectionId != null)
-            {
-                sectionShredules = sectionShredules.Where(sectionShredule =>
-                sectionShredule.SectionId == request.SectionId);
-            }
-            if (request.StartHour != null)
-            {
-                sectionShredules = sectionShredules.Where(sectionShredule =>
-                sectionShredule.StartHour.CompareTo(request.StartHour) < 0);
-            }
-            if (request.EndHour != null)
-            {
-                sectionShredules = sectionShredules.Where(sectionShredule =>
-                sectionShredule.EndHour.CompareTo(request.EndHour) > 0);
-            }
-
-            return sectionShredules.Select(section => FromEntityToDto(section));
+            return _sectionScheduleRepository
+                .Find(section => section.IsAppreciateToRequest(request))
+                .AsEnumerable()
+                .Select(section => new SectionScheduleDto(section));
         }
 
-        public async Task<SectionSchreduleDto> UpdateSectionSchedule(UpdateSectionSchreduleDto updateSectionSchredule)
+        public async Task<SectionScheduleDto> UpdateSectionSchedule(UpdateSectionScheduleDto updateSectionSchedule)
         {
-            var sectionSchedule = _sectionScheduleRepository.GetAll().FirstOrDefault(gym => gym.Id == updateSectionSchredule.Id);
+            var sectionSchedule = _sectionScheduleRepository.GetAll()
+                .FirstOrDefault(gym => gym.Id == updateSectionSchedule.Id);
             if (sectionSchedule == null)
             {
                 return null;
             }
 
-            sectionSchedule.StartHour = TimeSpan.FromSeconds(updateSectionSchredule.StartHour);
-            sectionSchedule.EndHour = TimeSpan.FromSeconds(updateSectionSchredule.EndHour);
-            sectionSchedule.SectionId = updateSectionSchredule.SectionId;
+            sectionSchedule.StartHour = TimeSpan.FromSeconds(updateSectionSchedule.StartHour);
+            sectionSchedule.EndHour = TimeSpan.FromSeconds(updateSectionSchedule.EndHour);
+            sectionSchedule.SectionId = updateSectionSchedule.SectionId;
 
             var result = await _sectionScheduleRepository.UpdateAsync(sectionSchedule);
-            return FromEntityToDto(result);
-        }
-        public SectionSchreduleDto FromEntityToDto(SectionSchedule sectionSchedule)
-        {
-            return new SectionSchreduleDto
-            {
-                Id = sectionSchedule.Id,
-                EndHour = sectionSchedule.EndHour,
-                SectionId = sectionSchedule.SectionId,
-                StartHour = sectionSchedule.StartHour,
-            };
+            return new SectionScheduleDto(result);
         }
     }
 }

@@ -1,21 +1,25 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using FitnessBooking.Core.Models.Requests;
 
 namespace FitnessBooking.Core.Models
 {
     public class Coach
     {
-        public int Id { get; set; }
+        [Key] public int Id { get; set; }
+
         public int SectionId { get; set; }
         public int UserId { get; set; }
-        public bool Equals(GetCoachRequest other)
+
+        public bool IsAppreciateToRequest(GetCoachRequest other)
         {
-            return SectionId == other.SectionId;
+            return other.SectionId == null || SectionId == other.SectionId;
         }
+
         protected bool Equals(Coach other)
         {
-            return Id == other.Id 
-                   && SectionId == other.SectionId 
+            return Id == other.Id
+                   && SectionId == other.SectionId
                    && UserId == other.UserId;
         }
 
@@ -23,8 +27,8 @@ namespace FitnessBooking.Core.Models
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != this.GetType()) return false;
-            return Equals((Coach) obj);
+
+            return obj.GetType() == GetType() && Equals((Coach) obj);
         }
 
         public override int GetHashCode()

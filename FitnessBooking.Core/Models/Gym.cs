@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using FitnessBooking.Core.Models.Requests;
 
@@ -11,24 +12,27 @@ namespace FitnessBooking.Core.Models
         {
             Sections = new HashSet<Section>();
         }
-        public int Id { get; }
+
+        [Key] public int Id { get; set; }
         public string Name { get; set; }
         public string Location { get; set; }
         public string Description { get; set; }
         public virtual ICollection<Section> Sections { get; set; }
 
-        public bool Equals(GetGymRequest other)
+        public bool IsAppreciateToRequest(GetGymRequest other)
         {
-            return Name == other.Name 
-                   && Location == other.Location 
-                   && Sections.All(section => section.Equals(other.SectionRequest));
+            return (string.IsNullOrEmpty(other.Name) || Name == other.Name)
+                   && (string.IsNullOrEmpty(other.Location) || Location == other.Location)
+                   && (other.SectionRequest == null ||
+                       Sections.All(section => section.IsAppreciateToRequest(other.SectionRequest)));
         }
-        protected bool Equals(Gym other)
+
+        private bool Equals(Gym other)
         {
-            return Id == other.Id 
-                   && Name == other.Name 
-                   && Location == other.Location 
-                   && Description == other.Description 
+            return Id == other.Id
+                   && Name == other.Name
+                   && Location == other.Location
+                   && Description == other.Description
                    && Equals(Sections, other.Sections);
         }
 
@@ -36,7 +40,7 @@ namespace FitnessBooking.Core.Models
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == this.GetType() && Equals((Gym) obj);
+            return obj.GetType() == GetType() && Equals((Gym) obj);
         }
 
         public override int GetHashCode()

@@ -34,7 +34,7 @@ namespace FitnessBooking.Business.Managers
         public IEnumerable<CoachDto> GetCoaches(GetCoachRequest request)
         {
             return _coachRepository
-                .Find(coach => coach.Equals(request))
+                .Find(coach => coach.IsAppreciateToRequest(request))
                 .AsEnumerable()
                 .Select(CoachDto.FromEntityToDto);
         }
@@ -46,12 +46,10 @@ namespace FitnessBooking.Business.Managers
             {
                 return null;
             }
+
             coach.SectionId = updateCoach.SectionId;
             coach = await _coachRepository.UpdateAsync(coach);
             return CoachDto.FromEntityToDto(coach);
         }
-
-    
-
     }
 }

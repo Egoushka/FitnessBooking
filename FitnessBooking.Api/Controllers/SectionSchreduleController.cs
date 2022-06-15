@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using FitnessBooking.Api.Attributes;
 using FitnessBooking.Core.Enums;
 using FitnessBooking.Core.Interfaces.Managers;
-using FitnessBooking.Core.Models.Dto.SectionSchredule;
+using FitnessBooking.Core.Models.Dto.SectionSchedule;
 using FitnessBooking.Core.Models.Requests;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,18 +11,18 @@ namespace FitnessBooking.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SectionSchreduleController : Controller
+    public class SectionScheduleController : Controller
     {
         private readonly ISectionScheduleManager _sectionScheduleManager;
 
-        public SectionSchreduleController(ISectionScheduleManager sectionSchedule)
+        public SectionScheduleController(ISectionScheduleManager sectionSchedule)
         {
             _sectionScheduleManager = sectionSchedule;
         }
 
         [HttpPost]
         [RoleBasedAuth(Roles.Administrator)]
-        public async Task<IActionResult> AddNewSectionScheduleAsync(NewSectionSchreduleDto newSection)
+        public async Task<IActionResult> AddNewSectionScheduleAsync(NewSectionScheduleDto newSection)
         {
             var answer = await _sectionScheduleManager.AddNewSectionSchedule(newSection);
 
@@ -36,7 +36,7 @@ namespace FitnessBooking.Api.Controllers
 
         [HttpPut]
         [RoleBasedAuth(Roles.Administrator)]
-        public async Task<IActionResult> UpdateSectionShredule(UpdateSectionSchreduleDto updateSection)
+        public async Task<IActionResult> UpdateSectionSchedule(UpdateSectionScheduleDto updateSection)
         {
             var answer = await _sectionScheduleManager.UpdateSectionSchedule(updateSection);
 
@@ -49,14 +49,15 @@ namespace FitnessBooking.Api.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetSectionShredules(int? id, int? sectionId, TimeSpan? startHour, TimeSpan? endHour)
+        public IActionResult GetSectionSchedules(int? id, int? sectionId, TimeSpan? startHour, TimeSpan? endHour)
         {
-            var request = new GetSectionShreduleRequest(id, sectionId, startHour, endHour);
+            var request = new GetSectionScheduleRequest(id, sectionId, startHour, endHour);
             var answer = _sectionScheduleManager.GetSectionSchedules(request);
             if (answer == null)
             {
                 return NotFound();
             }
+
             return Json(answer);
         }
     }

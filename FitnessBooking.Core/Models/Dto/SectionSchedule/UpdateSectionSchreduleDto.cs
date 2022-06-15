@@ -1,6 +1,6 @@
-﻿namespace FitnessBooking.Core.Models.Dto.SectionSchredule
+﻿namespace FitnessBooking.Core.Models.Dto.SectionSchedule
 {
-    public class UpdateSectionSchreduleDto
+    public class UpdateSectionScheduleDto
     {
         public int Id { get; set; }
         public int SectionId { get; set; }

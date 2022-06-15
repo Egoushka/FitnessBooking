@@ -1,17 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using FitnessBooking.Core.Interfaces.Infrastructure;
-using FitnessBooking.Core.Models.Dto.SectionSchredule;
+using FitnessBooking.Core.Models.Dto.SectionSchedule;
 using FitnessBooking.Core.Models.Requests;
 
 namespace FitnessBooking.Core.Interfaces.Managers
 {
     public interface ISectionScheduleManager : ITransientService
     {
-        public Task<SectionSchreduleDto> AddNewSectionSchedule(NewSectionSchreduleDto newSectionSchredule);
+        public Task<SectionScheduleDto> AddNewSectionSchedule(NewSectionScheduleDto newSectionSchedule);
 
-        public IEnumerable<SectionSchreduleDto> GetSectionSchedules(GetSectionShreduleRequest request);
+        public IEnumerable<SectionScheduleDto> GetSectionSchedules(GetSectionScheduleRequest request);
 
-        public Task<SectionSchreduleDto> UpdateSectionSchedule(UpdateSectionSchreduleDto updateSectionSchredule);
+        public Task<SectionScheduleDto> UpdateSectionSchedule(UpdateSectionScheduleDto updateSectionSchedule);
     }
 }

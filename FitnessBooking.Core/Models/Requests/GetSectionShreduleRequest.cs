@@ -2,15 +2,16 @@
 
 namespace FitnessBooking.Core.Models.Requests
 {
-    public class GetSectionShreduleRequest
+    public class GetSectionScheduleRequest
     {
-        public GetSectionShreduleRequest(int? id, int? sectionId, TimeSpan? startHour, TimeSpan? endHour)
+        public GetSectionScheduleRequest(int? id, int? sectionId, TimeSpan? startHour, TimeSpan? endHour)
         {
             Id = id;
             SectionId = sectionId;
             StartHour = startHour;
             EndHour = endHour;
         }
+
         public int? Id { get; set; }
         public int? SectionId { get; set; }
         public TimeSpan? StartHour { get; set; }
